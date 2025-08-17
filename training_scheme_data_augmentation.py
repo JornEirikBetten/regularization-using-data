@@ -66,7 +66,7 @@ if args.dropout:
     args.model = f"dropout{args.model}"
 
 wandb_project = f"data-augmentation" 
-wandb_name = f"augmented-{args.dataset}-{args.model}-lr={args.lr}"
+wandb_name = f"adversarial-{args.dataset}-{args.model}-lr={args.lr}"
 
 
 # LOAD DATASET        
@@ -166,7 +166,10 @@ def build_train_function(train_on_batch, eval_on_batch, adversary):
     def train_epoch(carry, unused):     
         state, train_set, batched_validation_set = carry
         # Here you can add a data augmentation step 
-        variables = {"params": state.params, "batch_stats": state.batch_stats}
+        if args.batch_norm: 
+            variables = {"params": state.params, "batch_stats": state.batch_stats}
+        else: 
+            variables = {"params": state.params}
         # rng, rng_transform = jax.random.split(state.rng)
         # rngs = jax.random.split(rng_transform, train_set.images.shape[0])
         # augmented_train_set = data_handling.DataBatch(images=batch_transform(rngs, train_set.images), labels=train_set.labels)
@@ -232,7 +235,7 @@ def build_train_function(train_on_batch, eval_on_batch, adversary):
     return train 
         
 carry = (state, train_set, batched_validation_set)
-train = jax.jit(build_train_function(train_on_batch, eval_on_batch))
+train = jax.jit(build_train_function(train_on_batch, eval_on_batch, pgd_linf))
 if args.wandb: 
     wandb.init(project=wandb_project, config=args, name=wandb_name)
 trained_state, mean_eval_accuracies = train(carry)
