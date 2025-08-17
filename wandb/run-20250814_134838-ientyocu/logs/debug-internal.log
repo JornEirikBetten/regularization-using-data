@@ -1,0 +1,11 @@
+{"time":"2025-08-14T13:48:38.340762586+02:00","level":"INFO","msg":"stream: starting","core version":"0.21.1"}
+{"time":"2025-08-14T13:48:38.955179305+02:00","level":"INFO","msg":"stream: created new stream","id":"ientyocu"}
+{"time":"2025-08-14T13:48:38.955270545+02:00","level":"INFO","msg":"stream: started","id":"ientyocu"}
+{"time":"2025-08-14T13:48:38.955370601+02:00","level":"INFO","msg":"writer: started","stream_id":"ientyocu"}
+{"time":"2025-08-14T13:48:38.955404699+02:00","level":"INFO","msg":"sender: started","stream_id":"ientyocu"}
+{"time":"2025-08-14T13:48:38.95544553+02:00","level":"INFO","msg":"handler: started","stream_id":"ientyocu"}
+{"time":"2025-08-14T13:48:41.904732751+02:00","level":"INFO","msg":"stream: closing","id":"ientyocu"}
+{"time":"2025-08-14T13:48:42.927461986+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-08-14T13:48:43.195739698+02:00","level":"INFO","msg":"handler: closed","stream_id":"ientyocu"}
+{"time":"2025-08-14T13:48:43.196345778+02:00","level":"INFO","msg":"sender: closed","stream_id":"ientyocu"}
+{"time":"2025-08-14T13:48:43.19636167+02:00","level":"INFO","msg":"stream: closed","id":"ientyocu"}

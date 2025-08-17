@@ -1,0 +1,8 @@
+{"time":"2025-08-12T16:52:21.886993297+02:00","level":"INFO","msg":"stream: starting","core version":"0.21.1"}
+{"time":"2025-08-12T16:52:22.312702075+02:00","level":"INFO","msg":"stream: created new stream","id":"iuzhdhet"}
+{"time":"2025-08-12T16:52:22.312779321+02:00","level":"INFO","msg":"stream: started","id":"iuzhdhet"}
+{"time":"2025-08-12T16:52:22.313285136+02:00","level":"INFO","msg":"writer: started","stream_id":"iuzhdhet"}
+{"time":"2025-08-12T16:52:22.313299105+02:00","level":"INFO","msg":"sender: started","stream_id":"iuzhdhet"}
+{"time":"2025-08-12T16:52:22.313387396+02:00","level":"INFO","msg":"handler: started","stream_id":"iuzhdhet"}
+{"time":"2025-08-12T16:54:40.862219601+02:00","level":"ERROR","msg":"HTTP error","status":404,"method":"POST","url":"https://api.wandb.ai/files/jorneirikbetten/regularize-using-data/iuzhdhet/file_stream"}
+{"time":"2025-08-12T16:54:40.862384849+02:00","level":"ERROR+4","msg":"filestream: fatal error: filestream: failed to upload: 404 Not Found path=files/jorneirikbetten/regularize-using-data/iuzhdhet/file_stream: {\"error\":\"project jorneirikbetten/regularize-using-data not found while streaming file\"}"}

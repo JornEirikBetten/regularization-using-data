@@ -1,0 +1,12 @@
+{"time":"2025-08-15T12:11:32.008212655+02:00","level":"INFO","msg":"stream: starting","core version":"0.21.1"}
+{"time":"2025-08-15T12:11:32.362149762+02:00","level":"INFO","msg":"stream: created new stream","id":"gaevp18i"}
+{"time":"2025-08-15T12:11:32.362211478+02:00","level":"INFO","msg":"stream: started","id":"gaevp18i"}
+{"time":"2025-08-15T12:11:32.362264136+02:00","level":"INFO","msg":"writer: started","stream_id":"gaevp18i"}
+{"time":"2025-08-15T12:11:32.362322115+02:00","level":"INFO","msg":"sender: started","stream_id":"gaevp18i"}
+{"time":"2025-08-15T12:11:32.362345038+02:00","level":"INFO","msg":"handler: started","stream_id":"gaevp18i"}
+{"time":"2025-08-15T12:49:28.9830665+02:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading output.log","runtime_seconds":0.775842921},{"desc":"uploading config.yaml","runtime_seconds":0.557611582,"progress":"2.7KB/2.7KB"}],"total_operations":2}}
+{"time":"2025-08-15T12:49:29.011107722+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-08-15T12:49:29.289919755+02:00","level":"INFO","msg":"stream: closing","id":"gaevp18i"}
+{"time":"2025-08-15T12:49:29.290006948+02:00","level":"INFO","msg":"handler: closed","stream_id":"gaevp18i"}
+{"time":"2025-08-15T12:49:29.290078515+02:00","level":"INFO","msg":"sender: closed","stream_id":"gaevp18i"}
+{"time":"2025-08-15T12:49:29.290091148+02:00","level":"INFO","msg":"stream: closed","id":"gaevp18i"}

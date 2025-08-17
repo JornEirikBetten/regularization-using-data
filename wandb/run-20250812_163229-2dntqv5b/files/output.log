@@ -1,0 +1,31 @@
+Traceback (most recent call last):
+  File "/home/jeb/Projects/training/regularization-using-data/train.py", line 167, in <module>
+    out, accuracies_mean = jax.lax.scan(
+                           ^^^^^^^^^^^^^
+  File "/home/jeb/Projects/training/regularization-using-data/train.py", line 139, in training
+    train_state, eval_metrics = jax.lax.cond(
+                                ^^^^^^^^^^^^^
+  File "/home/jeb/Projects/training/regularization-using-data/train.py", line 141, in <lambda>
+    lambda: evaluate(train_state, batched_validation_set),
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jeb/Projects/training/regularization-using-data/train.py", line 115, in evaluate
+    logits = forward_pass(params, images)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jeb/Projects/training/regularization-using-data/training/training.py", line 21, in forward_pass
+    logits = model.apply(params, images)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jeb/Projects/training/regularization-using-data/models/models.py", line 47, in __call__
+    x = nn.Dense(self.num_classes)(x)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jeb/Projects/training/regularization-using-data/venv/lib/python3.11/site-packages/flax/linen/linear.py", line 264, in __call__
+    kernel = self.param(
+             ^^^^^^^^^^^
+  File "/home/jeb/Projects/training/regularization-using-data/venv/lib/python3.11/site-packages/jax/_src/nn/initializers.py", line 338, in init
+    fan_in, fan_out = _compute_fans(shape, in_axis, out_axis, batch_axis)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jeb/Projects/training/regularization-using-data/venv/lib/python3.11/site-packages/jax/_src/nn/initializers.py", line 242, in _compute_fans
+    receptive_field_size = math.prod(shape) / in_size / out_size / batch_size
+                           ~~~~~~~~~~~~~~~~~^~~~~~~~~
+ZeroDivisionError: division by zero
+--------------------
+For simplicity, JAX has removed its internal frames from the traceback of the following exception. Set JAX_TRACEBACK_FILTERING=off to include these.

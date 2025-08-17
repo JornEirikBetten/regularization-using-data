@@ -1,0 +1,12 @@
+{"time":"2025-08-13T13:43:13.634400646+02:00","level":"INFO","msg":"stream: starting","core version":"0.21.1"}
+{"time":"2025-08-13T13:43:13.9970162+02:00","level":"INFO","msg":"stream: created new stream","id":"nfpy6irq"}
+{"time":"2025-08-13T13:43:13.997075371+02:00","level":"INFO","msg":"stream: started","id":"nfpy6irq"}
+{"time":"2025-08-13T13:43:13.997144641+02:00","level":"INFO","msg":"writer: started","stream_id":"nfpy6irq"}
+{"time":"2025-08-13T13:43:13.997231745+02:00","level":"INFO","msg":"handler: started","stream_id":"nfpy6irq"}
+{"time":"2025-08-13T13:43:13.997280641+02:00","level":"INFO","msg":"sender: started","stream_id":"nfpy6irq"}
+{"time":"2025-08-13T13:45:30.793912824+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-08-13T13:45:30.985952434+02:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading summary","runtime_seconds":0.191940744}],"total_operations":1}}
+{"time":"2025-08-13T13:45:31.047408929+02:00","level":"INFO","msg":"stream: closing","id":"nfpy6irq"}
+{"time":"2025-08-13T13:45:31.047465115+02:00","level":"INFO","msg":"handler: closed","stream_id":"nfpy6irq"}
+{"time":"2025-08-13T13:45:31.047519677+02:00","level":"INFO","msg":"sender: closed","stream_id":"nfpy6irq"}
+{"time":"2025-08-13T13:45:31.047525688+02:00","level":"INFO","msg":"stream: closed","id":"nfpy6irq"}

@@ -1,0 +1,12 @@
+{"time":"2025-08-14T15:04:11.4735176+02:00","level":"INFO","msg":"stream: starting","core version":"0.21.1"}
+{"time":"2025-08-14T15:04:11.86791936+02:00","level":"INFO","msg":"stream: created new stream","id":"aed1rxgc"}
+{"time":"2025-08-14T15:04:11.86799797+02:00","level":"INFO","msg":"stream: started","id":"aed1rxgc"}
+{"time":"2025-08-14T15:04:11.868061658+02:00","level":"INFO","msg":"writer: started","stream_id":"aed1rxgc"}
+{"time":"2025-08-14T15:04:11.868113158+02:00","level":"INFO","msg":"handler: started","stream_id":"aed1rxgc"}
+{"time":"2025-08-14T15:04:11.868159863+02:00","level":"INFO","msg":"sender: started","stream_id":"aed1rxgc"}
+{"time":"2025-08-14T15:28:55.502741423+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-08-14T15:28:55.74248304+02:00","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2025-08-14T15:28:55.745755152+02:00","level":"INFO","msg":"stream: closing","id":"aed1rxgc"}
+{"time":"2025-08-14T15:28:55.745808983+02:00","level":"INFO","msg":"handler: closed","stream_id":"aed1rxgc"}
+{"time":"2025-08-14T15:28:55.745846768+02:00","level":"INFO","msg":"sender: closed","stream_id":"aed1rxgc"}
+{"time":"2025-08-14T15:28:55.745855991+02:00","level":"INFO","msg":"stream: closed","id":"aed1rxgc"}

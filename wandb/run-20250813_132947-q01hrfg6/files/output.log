@@ -1,0 +1,4 @@
+Initial shape of x:  (128, 32, 32, 3)
+Shape of x after initial conv:  (128, 32, 32, 32)
+Initial shape of x:  (128, 32, 32, 3)
+Shape of x after initial conv:  (128, 32, 32, 32)

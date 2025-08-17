@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/home/jeb/Projects/training/regularization-using-data/training_scheme.py", line 169, in <module>
+    trained_state, mean_eval_accuracies = train(carry)
+                                          ^^^^^^^^^^^^
+  File "/home/jeb/Projects/training/regularization-using-data/training_scheme.py", line 155, in train
+    trained_state, mean_eval_accuracies = jax.lax.scan(
+                                          ^^^^^^^^^^^^^
+TypeError: scan body function carry input and carry output must have the same pytree structure, but they differ:
+
+The input carry carry is a <class 'tuple'> but the corresponding component of the carry output is a <class '__main__.State'>, so their Python types differ.
+
+Revise the function so that the carry output has the same pytree structure as the carry input.
+--------------------
+For simplicity, JAX has removed its internal frames from the traceback of the following exception. Set JAX_TRACEBACK_FILTERING=off to include these.

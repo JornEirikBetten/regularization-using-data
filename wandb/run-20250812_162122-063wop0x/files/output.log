@@ -1,0 +1,28 @@
+Traceback (most recent call last):
+  File "/home/jeb/Projects/training/regularization-using-data/train.py", line 158, in <module>
+    training_loop,
+
+  File "/home/jeb/Projects/training/regularization-using-data/train.py", line 115, in training
+    update_step,
+
+  File "/home/jeb/Projects/training/regularization-using-data/training/training.py", line 109, in update_step
+    (loss, (accuracy)), grads = jax.value_and_grad(simplified_loss, has_aux=True)(params)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jeb/Projects/training/regularization-using-data/training/training.py", line 108, in <lambda>
+    simplified_loss = lambda params: loss_fn(params, images, labels)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jeb/Projects/training/regularization-using-data/training/training.py", line 63, in loss_fn
+    logits = forward_pass(params, images)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jeb/Projects/training/regularization-using-data/training/training.py", line 21, in forward_pass
+    logits = model.apply(params, images)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jeb/Projects/training/regularization-using-data/models/models.py", line 39, in __call__
+    x = nn.Conv(self.num_filters, **self.conv_config)(x)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jeb/Projects/training/regularization-using-data/venv/lib/python3.11/site-packages/flax/linen/linear.py", line 663, in __call__
+    kernel = self.param(
+             ^^^^^^^^^^^
+flax.errors.ScopeCollectionNotFound: Tried to access "kernel" from collection "params" in "/Conv_0" but the collection is empty. (https://flax.readthedocs.io/en/latest/api_reference/flax.errors.html#flax.errors.ScopeCollectionNotFound)
+--------------------
+For simplicity, JAX has removed its internal frames from the traceback of the following exception. Set JAX_TRACEBACK_FILTERING=off to include these.

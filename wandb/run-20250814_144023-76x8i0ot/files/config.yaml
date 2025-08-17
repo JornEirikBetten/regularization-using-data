@@ -1,0 +1,94 @@
+_wandb:
+    value:
+        cli_version: 0.21.1
+        e:
+            00jaf4f18v7c0okn0y08rqfm6bnr0qcm:
+                args:
+                    - dataset=cifar10
+                    - model=resnet34
+                    - batch_norm=True
+                    - lr=0.01
+                    - eval_interval=5
+                codePath: training_scheme.py
+                codePathLocal: training_scheme.py
+                cpu_count: 8
+                cpu_count_logical: 16
+                cudaVersion: "12.9"
+                disk:
+                    /:
+                        total: "1081101176832"
+                        used: "549389266944"
+                email: jorneirik@simula.no
+                executable: /home/jeb/Projects/training/regularization-using-data/venv/bin/python
+                git:
+                    commit: fbeef00c13b5e35d8b9141b5eda5129fa7b112df
+                    remote: https://github.com/JornEirikBetten/regularization-using-data.git
+                gpu: NVIDIA GeForce RTX 4070 Laptop GPU
+                gpu_count: 1
+                gpu_nvidia:
+                    - architecture: Ada
+                      memoryTotal: "8585740288"
+                      name: NVIDIA GeForce RTX 4070 Laptop GPU
+                      uuid: GPU-379b783d-88eb-a3ab-6321-1a0cbc2521b9
+                host: JEB
+                memory:
+                    total: "16351690752"
+                os: Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35
+                program: /home/jeb/Projects/training/regularization-using-data/training_scheme.py
+                python: CPython 3.11.5
+                root: /home/jeb/Projects/training/regularization-using-data
+                startedAt: "2025-08-14T12:40:23.335395Z"
+                writerId: 00jaf4f18v7c0okn0y08rqfm6bnr0qcm
+        m: []
+        python_version: 3.11.5
+        t:
+            "1":
+                - 1
+                - 2
+                - 3
+                - 12
+                - 41
+                - 45
+                - 51
+            "2":
+                - 1
+                - 2
+                - 3
+                - 12
+                - 41
+                - 45
+                - 51
+            "3":
+                - 2
+                - 13
+                - 16
+            "4": 3.11.5
+            "5": 0.21.1
+            "8":
+                - 2
+            "12": 0.21.1
+            "13": linux-x86_64
+batch_norm:
+    value: true
+batch_size:
+    value: 128
+dataset:
+    value: cifar10
+dropout:
+    value: false
+epochs:
+    value: 101
+eval_interval:
+    value: 5
+lr:
+    value: 0.01
+model:
+    value: resnet34
+optimizer:
+    value: adam
+save_model:
+    value: true
+seed:
+    value: 123456
+wandb:
+    value: true

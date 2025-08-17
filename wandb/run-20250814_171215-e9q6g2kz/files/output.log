@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "/home/jeb/Projects/training/regularization-using-data/training_scheme_data_augmentation.py", line 191, in <module>
+    trained_state, mean_eval_accuracies = train(carry)
+                                          ^^^^^^^^^^^^
+  File "/home/jeb/Projects/training/regularization-using-data/training_scheme_data_augmentation.py", line 177, in train
+    (trained_state, train_set, batched_validation_set), mean_eval_accuracies = jax.lax.scan(
+                                                                               ^^^^^^^^^^^^^
+  File "/home/jeb/Projects/training/regularization-using-data/training_scheme_data_augmentation.py", line 144, in train_epoch
+    augmented_train_set = data_handling.DataBatch(images=batch_transform(rng_transform, train_set.images), labels=train_set.labels)
+                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: vmap got inconsistent sizes for array axes to be mapped:
+  * one axis had size 2: axis 0 of argument rng of type uint32[2];
+  * one axis had size 50000: axis 0 of argument inputs of type float32[50000,32,32,3]
+--------------------
+For simplicity, JAX has removed its internal frames from the traceback of the following exception. Set JAX_TRACEBACK_FILTERING=off to include these.

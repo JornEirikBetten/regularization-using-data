@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/home/jeb/Projects/training/regularization-using-data/training_scheme_data_augmentation.py", line 190, in <module>
+    trained_state, mean_eval_accuracies = train(carry)
+                                          ^^^^^^^^^^^^
+  File "/home/jeb/Projects/training/regularization-using-data/training_scheme_data_augmentation.py", line 176, in train
+    (trained_state, train_set, batched_validation_set), mean_eval_accuracies = jax.lax.scan(
+                                                                               ^^^^^^^^^^^^^
+  File "/home/jeb/Projects/training/regularization-using-data/training_scheme_data_augmentation.py", line 143, in train_epoch
+    train_set = data_handling.DataBatch(images=batch_transform(train_set.images), labels=train_set.labels)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Transformation.__call__() missing 1 required positional argument: 'inputs'
+--------------------
+For simplicity, JAX has removed its internal frames from the traceback of the following exception. Set JAX_TRACEBACK_FILTERING=off to include these.

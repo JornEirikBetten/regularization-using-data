@@ -1,0 +1,12 @@
+{"time":"2025-08-12T17:32:54.885369559+02:00","level":"INFO","msg":"stream: starting","core version":"0.21.1"}
+{"time":"2025-08-12T17:32:55.256948216+02:00","level":"INFO","msg":"stream: created new stream","id":"nzshwiro"}
+{"time":"2025-08-12T17:32:55.256994897+02:00","level":"INFO","msg":"stream: started","id":"nzshwiro"}
+{"time":"2025-08-12T17:32:55.257040505+02:00","level":"INFO","msg":"writer: started","stream_id":"nzshwiro"}
+{"time":"2025-08-12T17:32:55.257103597+02:00","level":"INFO","msg":"sender: started","stream_id":"nzshwiro"}
+{"time":"2025-08-12T17:32:55.257131024+02:00","level":"INFO","msg":"handler: started","stream_id":"nzshwiro"}
+{"time":"2025-08-12T17:37:32.982782577+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-08-12T17:37:33.254983142+02:00","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2025-08-12T17:37:33.257335908+02:00","level":"INFO","msg":"stream: closing","id":"nzshwiro"}
+{"time":"2025-08-12T17:37:33.25737141+02:00","level":"INFO","msg":"handler: closed","stream_id":"nzshwiro"}
+{"time":"2025-08-12T17:37:33.257499929+02:00","level":"INFO","msg":"sender: closed","stream_id":"nzshwiro"}
+{"time":"2025-08-12T17:37:33.257514407+02:00","level":"INFO","msg":"stream: closed","id":"nzshwiro"}

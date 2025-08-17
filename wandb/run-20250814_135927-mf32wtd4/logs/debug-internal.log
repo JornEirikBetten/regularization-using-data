@@ -1,0 +1,12 @@
+{"time":"2025-08-14T13:59:27.33605238+02:00","level":"INFO","msg":"stream: starting","core version":"0.21.1"}
+{"time":"2025-08-14T13:59:27.721439358+02:00","level":"INFO","msg":"stream: created new stream","id":"mf32wtd4"}
+{"time":"2025-08-14T13:59:27.721563142+02:00","level":"INFO","msg":"stream: started","id":"mf32wtd4"}
+{"time":"2025-08-14T13:59:27.721608943+02:00","level":"INFO","msg":"writer: started","stream_id":"mf32wtd4"}
+{"time":"2025-08-14T13:59:27.721676125+02:00","level":"INFO","msg":"sender: started","stream_id":"mf32wtd4"}
+{"time":"2025-08-14T13:59:27.721701561+02:00","level":"INFO","msg":"handler: started","stream_id":"mf32wtd4"}
+{"time":"2025-08-14T14:11:38.791862807+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-08-14T14:11:39.024832655+02:00","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2025-08-14T14:11:39.027797679+02:00","level":"INFO","msg":"stream: closing","id":"mf32wtd4"}
+{"time":"2025-08-14T14:11:39.027869334+02:00","level":"INFO","msg":"handler: closed","stream_id":"mf32wtd4"}
+{"time":"2025-08-14T14:11:39.027943465+02:00","level":"INFO","msg":"sender: closed","stream_id":"mf32wtd4"}
+{"time":"2025-08-14T14:11:39.027951825+02:00","level":"INFO","msg":"stream: closed","id":"mf32wtd4"}

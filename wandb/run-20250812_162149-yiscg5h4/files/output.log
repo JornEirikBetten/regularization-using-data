@@ -1,0 +1,82 @@
+Traceback (most recent call last):
+  File "/home/jeb/Projects/training/regularization-using-data/venv/lib/python3.11/site-packages/jax/_src/lax/lax.py", line 216, in _broadcast_shapes_uncached
+    return _try_broadcast_shapes(*rank_promoted_shapes, name='broadcast_shapes')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jeb/Projects/training/regularization-using-data/venv/lib/python3.11/site-packages/jax/_src/lax/lax.py", line 133, in _try_broadcast_shapes
+    raise TypeError(f'{name} got incompatible shapes for broadcasting: '
+TypeError: broadcast_shapes got incompatible shapes for broadcasting: (1, 128), (128, 10).
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jeb/Projects/training/regularization-using-data/venv/lib/python3.11/site-packages/jax/_src/lax/lax.py", line 194, in broadcast_shapes
+    return _broadcast_shapes_cached(*shapes)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jeb/Projects/training/regularization-using-data/venv/lib/python3.11/site-packages/jax/_src/util.py", line 298, in wrapper
+    return cached(config.trace_context() if trace_context_in_key else _ignore(),
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jeb/Projects/training/regularization-using-data/venv/lib/python3.11/site-packages/jax/_src/util.py", line 292, in cached
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/jeb/Projects/training/regularization-using-data/venv/lib/python3.11/site-packages/jax/_src/lax/lax.py", line 200, in _broadcast_shapes_cached
+    return _broadcast_shapes_uncached(*shapes)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jeb/Projects/training/regularization-using-data/venv/lib/python3.11/site-packages/jax/_src/lax/lax.py", line 219, in _broadcast_shapes_uncached
+    raise ValueError(f"Incompatible shapes for broadcasting: shapes={list(shapes)}") from err
+ValueError: Incompatible shapes for broadcasting: shapes=[(128,), (128, 10)]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/jeb/Projects/training/regularization-using-data/venv/lib/python3.11/site-packages/jax/_src/lax/lax.py", line 216, in _broadcast_shapes_uncached
+    return _try_broadcast_shapes(*rank_promoted_shapes, name='broadcast_shapes')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jeb/Projects/training/regularization-using-data/venv/lib/python3.11/site-packages/jax/_src/lax/lax.py", line 133, in _try_broadcast_shapes
+    raise TypeError(f'{name} got incompatible shapes for broadcasting: '
+TypeError: broadcast_shapes got incompatible shapes for broadcasting: (1, 128), (128, 10).
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jeb/Projects/training/regularization-using-data/train.py", line 157, in <module>
+    out, accuracies_mean = jax.lax.scan(
+                           ^^^^^^^^^^^^^
+  File "/home/jeb/Projects/training/regularization-using-data/train.py", line 114, in training
+    train_state, metrics = jax.lax.scan(
+                           ^^^^^^^^^^^^^
+  File "/home/jeb/Projects/training/regularization-using-data/training/training.py", line 109, in update_step
+    (loss, (accuracy)), grads = jax.value_and_grad(simplified_loss, has_aux=True)(params)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jeb/Projects/training/regularization-using-data/training/training.py", line 108, in <lambda>
+    simplified_loss = lambda params: loss_fn(params, images, labels)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jeb/Projects/training/regularization-using-data/training/training.py", line 64, in loss_fn
+    loss = distance_metric(logits, labels)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jeb/Projects/training/regularization-using-data/training/training.py", line 14, in cross_entropy
+    return optax.softmax_cross_entropy(logits, labels).mean()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jeb/Projects/training/regularization-using-data/venv/lib/python3.11/site-packages/optax/losses/_classification.py", line 290, in softmax_cross_entropy
+    return -(labels * log_probs).sum(axis, where=where)
+             ~~~~~~~^~~~~~~~~~~
+  File "/home/jeb/Projects/training/regularization-using-data/venv/lib/python3.11/site-packages/jax/_src/numpy/array_methods.py", line 1125, in op
+    return getattr(self.aval, f"_{name}")(self, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jeb/Projects/training/regularization-using-data/venv/lib/python3.11/site-packages/jax/_src/numpy/array_methods.py", line 586, in deferring_binary_op
+    return binary_op(*args)
+           ^^^^^^^^^^^^^^^^
+  File "/home/jeb/Projects/training/regularization-using-data/venv/lib/python3.11/site-packages/jax/_src/numpy/ufunc_api.py", line 183, in __call__
+    return call(*args)
+           ^^^^^^^^^^^
+  File "/home/jeb/Projects/training/regularization-using-data/venv/lib/python3.11/site-packages/jax/_src/numpy/ufuncs.py", line 1279, in multiply
+    x, y = promote_args("multiply", x, y)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jeb/Projects/training/regularization-using-data/venv/lib/python3.11/site-packages/jax/_src/numpy/util.py", line 229, in promote_args
+    return promote_shapes(fun_name, *promote_dtypes(*args))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jeb/Projects/training/regularization-using-data/venv/lib/python3.11/site-packages/jax/_src/numpy/util.py", line 65, in promote_shapes
+    result_rank = len(lax.broadcast_shapes(*shapes))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Incompatible shapes for broadcasting: shapes=[(128,), (128, 10)]
+--------------------
+For simplicity, JAX has removed its internal frames from the traceback of the following exception. Set JAX_TRACEBACK_FILTERING=off to include these.

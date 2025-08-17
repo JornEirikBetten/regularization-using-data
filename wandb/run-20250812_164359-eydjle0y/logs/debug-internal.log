@@ -1,0 +1,8 @@
+{"time":"2025-08-12T16:44:00.167935817+02:00","level":"INFO","msg":"stream: starting","core version":"0.21.1"}
+{"time":"2025-08-12T16:44:00.579162409+02:00","level":"INFO","msg":"stream: created new stream","id":"eydjle0y"}
+{"time":"2025-08-12T16:44:00.579221356+02:00","level":"INFO","msg":"stream: started","id":"eydjle0y"}
+{"time":"2025-08-12T16:44:00.579298851+02:00","level":"INFO","msg":"writer: started","stream_id":"eydjle0y"}
+{"time":"2025-08-12T16:44:00.579348908+02:00","level":"INFO","msg":"sender: started","stream_id":"eydjle0y"}
+{"time":"2025-08-12T16:44:00.579377366+02:00","level":"INFO","msg":"handler: started","stream_id":"eydjle0y"}
+{"time":"2025-08-12T16:54:39.659782917+02:00","level":"ERROR","msg":"HTTP error","status":404,"method":"POST","url":"https://api.wandb.ai/files/jorneirikbetten/regularize-using-data/eydjle0y/file_stream"}
+{"time":"2025-08-12T16:54:39.66031629+02:00","level":"ERROR+4","msg":"filestream: fatal error: filestream: failed to upload: 404 Not Found path=files/jorneirikbetten/regularize-using-data/eydjle0y/file_stream: {\"error\":\"project jorneirikbetten/regularize-using-data not found while streaming file\"}"}

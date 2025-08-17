@@ -1,0 +1,11 @@
+{"time":"2025-08-14T13:47:21.033610929+02:00","level":"INFO","msg":"stream: starting","core version":"0.21.1"}
+{"time":"2025-08-14T13:47:21.455121748+02:00","level":"INFO","msg":"stream: created new stream","id":"zieuhoat"}
+{"time":"2025-08-14T13:47:21.455240875+02:00","level":"INFO","msg":"stream: started","id":"zieuhoat"}
+{"time":"2025-08-14T13:47:21.455270684+02:00","level":"INFO","msg":"writer: started","stream_id":"zieuhoat"}
+{"time":"2025-08-14T13:47:21.455316507+02:00","level":"INFO","msg":"handler: started","stream_id":"zieuhoat"}
+{"time":"2025-08-14T13:47:21.455341482+02:00","level":"INFO","msg":"sender: started","stream_id":"zieuhoat"}
+{"time":"2025-08-14T13:47:24.195849013+02:00","level":"INFO","msg":"stream: closing","id":"zieuhoat"}
+{"time":"2025-08-14T13:47:24.921320261+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-08-14T13:47:25.193504051+02:00","level":"INFO","msg":"handler: closed","stream_id":"zieuhoat"}
+{"time":"2025-08-14T13:47:25.193613927+02:00","level":"INFO","msg":"sender: closed","stream_id":"zieuhoat"}
+{"time":"2025-08-14T13:47:25.193635607+02:00","level":"INFO","msg":"stream: closed","id":"zieuhoat"}

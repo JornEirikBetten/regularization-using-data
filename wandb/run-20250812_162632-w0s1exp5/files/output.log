@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/home/jeb/Projects/training/regularization-using-data/train.py", line 157, in <module>
+    out, accuracies_mean = jax.lax.scan(
+                           ^^^^^^^^^^^^^
+  File "/home/jeb/Projects/training/regularization-using-data/train.py", line 122, in training
+    batch_stats=train_state.batch_stats,
+                ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TrainState' object has no attribute 'batch_stats'
+--------------------
+For simplicity, JAX has removed its internal frames from the traceback of the following exception. Set JAX_TRACEBACK_FILTERING=off to include these.

@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/home/jeb/Projects/training/regularization-using-data/train.py", line 175, in <module>
+    out, accuracies_mean = jax.lax.scan(
+                           ^^^^^^^^^^^^^
+  File "/home/jeb/Projects/training/regularization-using-data/train.py", line 133, in training
+    train_state, metrics = jax.lax.scan(
+                           ^^^^^^^^^^^^^
+TypeError: scan body function carry input and carry output must have the same pytree structure, but they differ:
+
+The input carry component train_state.params is a <class 'dict'> with 3 children but the corresponding component of the carry output is a <class 'dict'> with 1 child, so the numbers of children do not match, with the symmetric difference of key sets: {'BatchNorm_2' 'BatchNorm_0' 'BatchNorm_1' 'batch_stats'}.
+
+Revise the function so that the carry output has the same pytree structure as the carry input.
+--------------------
+For simplicity, JAX has removed its internal frames from the traceback of the following exception. Set JAX_TRACEBACK_FILTERING=off to include these.

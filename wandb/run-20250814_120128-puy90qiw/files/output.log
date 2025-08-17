@@ -1,0 +1,24 @@
+Traceback (most recent call last):
+  File "/home/jeb/Projects/training/regularization-using-data/training_scheme.py", line 169, in <module>
+    trained_state, mean_eval_accuracies = train(carry)
+                                          ^^^^^^^^^^^^
+  File "/home/jeb/Projects/training/regularization-using-data/training_scheme.py", line 155, in train
+    trained_state, mean_eval_accuracies = jax.lax.scan(
+                                          ^^^^^^^^^^^^^
+  File "/home/jeb/Projects/training/regularization-using-data/training_scheme.py", line 132, in train_epoch
+    state, eval_metrics = jax.lax.scan(
+                          ^^^^^^^^^^^^^
+  File "/home/jeb/Projects/training/regularization-using-data/training/train_and_evaluate.py", line 194, in eval_batch
+    loss = cross_entropy(logits, labels)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jeb/Projects/training/regularization-using-data/training/train_and_evaluate.py", line 16, in cross_entropy
+    return optax.softmax_cross_entropy_with_integer_labels(logits, labels).mean()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jeb/Projects/training/regularization-using-data/venv/lib/python3.11/site-packages/optax/losses/_classification.py", line 373, in softmax_cross_entropy_with_integer_labels
+    axis = canonicalize_axis(axis, logits.ndim)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jeb/Projects/training/regularization-using-data/venv/lib/python3.11/site-packages/optax/losses/_classification.py", line 35, in canonicalize_axis
+    raise ValueError(f'axis {axis} is out of bounds for array of '
+ValueError: axis -1 is out of bounds for array of dimension 0
+--------------------
+For simplicity, JAX has removed its internal frames from the traceback of the following exception. Set JAX_TRACEBACK_FILTERING=off to include these.

@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/home/jeb/Projects/training/regularization-using-data/training_scheme.py", line 177, in <module>
+    trained_state, mean_eval_accuracies = train(carry)
+                                          ^^^^^^^^^^^^
+  File "/home/jeb/Projects/training/regularization-using-data/training_scheme.py", line 163, in train
+    (trained_state, train_set, batched_validation_set), mean_eval_accuracies = jax.lax.scan(
+                                                                               ^^^^^^^^^^^^^
+  File "/home/jeb/Projects/training/regularization-using-data/training_scheme.py", line 140, in train_epoch
+    state, eval_metrics = jax.lax.cond(
+                          ^^^^^^^^^^^^^
+  File "/home/jeb/Projects/training/regularization-using-data/training_scheme.py", line 143, in <lambda>
+    lambda: (state, EvalMetrics(loss=jnp.zeros((batched_validation_set.images.shape[0],)), accuracy=jnp.zeros((batched_validation_set.images.shape[0],))))
+                    ^^^^^^^^^^^
+NameError: name 'EvalMetrics' is not defined
+--------------------
+For simplicity, JAX has removed its internal frames from the traceback of the following exception. Set JAX_TRACEBACK_FILTERING=off to include these.

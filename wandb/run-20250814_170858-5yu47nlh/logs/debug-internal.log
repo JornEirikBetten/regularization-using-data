@@ -1,0 +1,8 @@
+{"time":"2025-08-14T17:08:58.955677293+02:00","level":"INFO","msg":"stream: starting","core version":"0.21.1"}
+{"time":"2025-08-14T17:08:59.389123549+02:00","level":"INFO","msg":"stream: created new stream","id":"5yu47nlh"}
+{"time":"2025-08-14T17:08:59.389189562+02:00","level":"INFO","msg":"stream: started","id":"5yu47nlh"}
+{"time":"2025-08-14T17:08:59.389280857+02:00","level":"INFO","msg":"handler: started","stream_id":"5yu47nlh"}
+{"time":"2025-08-14T17:08:59.389277717+02:00","level":"INFO","msg":"writer: started","stream_id":"5yu47nlh"}
+{"time":"2025-08-14T17:08:59.389366124+02:00","level":"INFO","msg":"sender: started","stream_id":"5yu47nlh"}
+{"time":"2025-08-14T17:18:47.02485115+02:00","level":"ERROR","msg":"HTTP error","status":404,"method":"POST","url":"https://api.wandb.ai/files/jorneirikbetten/data-augmentation/5yu47nlh/file_stream"}
+{"time":"2025-08-14T17:18:47.02508968+02:00","level":"ERROR+4","msg":"filestream: fatal error: filestream: failed to upload: 404 Not Found path=files/jorneirikbetten/data-augmentation/5yu47nlh/file_stream: {\"error\":\"run data-augmentation/5yu47nlh not found while streaming file\"}"}

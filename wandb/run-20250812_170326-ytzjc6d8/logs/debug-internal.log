@@ -1,0 +1,7 @@
+{"time":"2025-08-12T17:03:26.440109481+02:00","level":"INFO","msg":"stream: starting","core version":"0.21.1"}
+{"time":"2025-08-12T17:03:26.812020925+02:00","level":"INFO","msg":"stream: created new stream","id":"ytzjc6d8"}
+{"time":"2025-08-12T17:03:26.812082487+02:00","level":"INFO","msg":"stream: started","id":"ytzjc6d8"}
+{"time":"2025-08-12T17:03:26.812134248+02:00","level":"INFO","msg":"writer: started","stream_id":"ytzjc6d8"}
+{"time":"2025-08-12T17:03:26.812214793+02:00","level":"INFO","msg":"handler: started","stream_id":"ytzjc6d8"}
+{"time":"2025-08-12T17:03:26.812296966+02:00","level":"INFO","msg":"sender: started","stream_id":"ytzjc6d8"}
+{"time":"2025-08-12T17:08:03.071720867+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/jorneirikbetten/regularize-using-data/ytzjc6d8/file_stream\": write tcp 172.24.86.197:56376->35.186.228.49:443: write: broken pipe"}
