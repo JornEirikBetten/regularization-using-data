@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "/home/jeb/Projects/training/regularization-using-data/training_scheme_data_augmentation.py", line 241, in <module>
+    trained_state, mean_eval_accuracies = train(carry)
+                                          ^^^^^^^^^^^^
+  File "/home/jeb/Projects/training/regularization-using-data/training_scheme_data_augmentation.py", line 227, in train
+    (trained_state, train_set, batched_validation_set), mean_eval_accuracies = jax.lax.scan(
+                                                                               ^^^^^^^^^^^^^
+  File "/home/jeb/Projects/training/regularization-using-data/training_scheme_data_augmentation.py", line 178, in train_epoch
+    (variables, rng), batched_adv_training_set = jax.lax.scan(
+                                                 ^^^^^^^^^^^^^
+  File "/home/jeb/Projects/training/regularization-using-data/adversaries/adversaries.py", line 36, in linf_pgd_adversary
+    image_adv, _ = jax.lax.scan(
+                   ^^^^^^^^^^^^^
+  File "/home/jeb/Projects/training/regularization-using-data/adversaries/adversaries.py", line 31, in gradient_ascent
+    grad, aux = jax.grad(image_loss_fn, has_aux=True, allow_int=True)(image)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jeb/Projects/training/regularization-using-data/adversaries/adversaries.py", line 24, in <lambda>
+    image_loss_fn = lambda x: loss_fn(variables["params"], variables["batch_stats"], x, labels)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: build_loss_fn.<locals>.train_loss_fn() missing 1 required positional argument: 'rng_dropout'
+--------------------
+For simplicity, JAX has removed its internal frames from the traceback of the following exception. Set JAX_TRACEBACK_FILTERING=off to include these.

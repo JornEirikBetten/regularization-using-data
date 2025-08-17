@@ -115,7 +115,7 @@ else:
     
 train_loss_fn, eval_loss_fn = training.build_loss_fn(model_fn, distance_metric=training.cross_entropy, regularizer=None, batch_norm=args.batch_norm, dropout=args.dropout)
 optimizer = optax.adam(learning_rate=args.lr)
-pgd_linf, pgd_l2 = adversaries.build_pgd_adversaries(train_loss_fn, epsilon=0.031, alpha=0.0078, num_steps=40, batch_norm=args.batch_norm)
+pgd_linf, pgd_l2 = adversaries.build_pgd_adversaries(eval_loss_fn, epsilon=0.031, alpha=0.0078, num_steps=40, batch_norm=args.batch_norm)
 
 train_on_batch = training.build_train_step(train_loss_fn, optimizer, batch_norm=args.batch_norm, dropout=args.dropout)
 eval_on_batch = training.build_eval_batch(eval_loss_fn, batch_norm=args.batch_norm)
@@ -145,11 +145,17 @@ def build_train_function(train_on_batch, eval_on_batch, adversary):
             state, 
             batched_validation_set 
         )
-        batched_adv_validation_set = jax.lax.scan(
+        if args.batch_norm: 
+            variables = {"params": state.params, "batch_stats": state.batch_stats}
+        else: 
+            variables = {"params": state.params}
+        rng, rng_adversary = jax.random.split(state.rng)
+        (variables, rng_adversary), batched_adv_validation_set = jax.lax.scan(
             adversary, 
-            state, 
+            (variables, rng_adversary), 
             batched_validation_set
         )
+        state = state._replace(rng=rng)
         state, adv_metrics = jax.lax.scan(
             eval_on_batch, 
             state, 
@@ -221,7 +227,7 @@ def build_train_function(train_on_batch, eval_on_batch, adversary):
                     wandb.log(metrics)
             jax.debug.callback(callback, log_metrics)
         state = state._replace(epoch=state.epoch + 1)
-        return (state, train_set, batched_validation_set), eval_metrics.accuracy.mean()
+        return (state, train_set, batched_validation_set), eval_metrics.validation_accuracy.mean()
     
     def train(carry): 
         (trained_state, train_set, batched_validation_set), mean_eval_accuracies = jax.lax.scan(

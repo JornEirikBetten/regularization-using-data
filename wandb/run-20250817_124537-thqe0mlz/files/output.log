@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/home/jeb/Projects/training/regularization-using-data/training_scheme_data_augmentation.py", line 247, in <module>
+    trained_state, mean_eval_accuracies = train(carry)
+                                          ^^^^^^^^^^^^
+  File "/home/jeb/Projects/training/regularization-using-data/training_scheme_data_augmentation.py", line 233, in train
+    (trained_state, train_set, batched_validation_set), mean_eval_accuracies = jax.lax.scan(
+                                                                               ^^^^^^^^^^^^^
+  File "/home/jeb/Projects/training/regularization-using-data/training_scheme_data_augmentation.py", line 230, in train_epoch
+    return (state, train_set, batched_validation_set), eval_metrics.accuracy.mean()
+                                                       ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'EvalLogMetrics' object has no attribute 'accuracy'
+--------------------
+For simplicity, JAX has removed its internal frames from the traceback of the following exception. Set JAX_TRACEBACK_FILTERING=off to include these.

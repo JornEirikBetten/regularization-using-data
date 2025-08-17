@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "/home/jeb/Projects/training/regularization-using-data/training_scheme_data_augmentation.py", line 241, in <module>
+    trained_state, mean_eval_accuracies = train(carry)
+                                          ^^^^^^^^^^^^
+  File "/home/jeb/Projects/training/regularization-using-data/training_scheme_data_augmentation.py", line 227, in train
+    (trained_state, train_set, batched_validation_set), mean_eval_accuracies = jax.lax.scan(
+                                                                               ^^^^^^^^^^^^^
+  File "/home/jeb/Projects/training/regularization-using-data/training_scheme_data_augmentation.py", line 202, in train_epoch
+    state, eval_metrics = jax.lax.cond(
+                          ^^^^^^^^^^^^^
+  File "/home/jeb/Projects/training/regularization-using-data/training_scheme_data_augmentation.py", line 204, in <lambda>
+    lambda: evaluate(state, batched_validation_set),
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jeb/Projects/training/regularization-using-data/training_scheme_data_augmentation.py", line 148, in evaluate
+    batched_adv_validation_set = jax.lax.scan(
+                                 ^^^^^^^^^^^^^
+  File "/home/jeb/Projects/training/regularization-using-data/adversaries/adversaries.py", line 19, in linf_pgd_adversary
+    variables, rng = carry
+    ^^^^^^^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+--------------------
+For simplicity, JAX has removed its internal frames from the traceback of the following exception. Set JAX_TRACEBACK_FILTERING=off to include these.
