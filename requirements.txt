@@ -2,7 +2,7 @@ augmax==0.4.1
 cuda-python==13.0.0
 distrax==0.1.5
 dm-haiku==0.0.14
-flax==0.11.1
+flax>=0.10.0
 jax==0.7.0
 matplotlib
 numpy==2.1.3 
