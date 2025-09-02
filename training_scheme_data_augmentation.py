@@ -35,7 +35,7 @@ class TrainingConfig(BaseModel):
     ] = "resnet1"
     seed: int = 123456
     lr: float = 0.1
-    batch_size: int = 128
+    batch_size: int = 512
     eval_interval: int = 10
     epochs: int = 101
     dropout: bool = False
@@ -161,6 +161,8 @@ def build_train_function(train_on_batch, eval_on_batch, adversary):
             state, 
             batched_adv_validation_set 
         )
+        # print(eval_metrics.loss)
+        # print(adv_metrics.loss)
         log_metrics = EvalLogMetrics(
             validation_loss=eval_metrics.loss, 
             validation_accuracy=eval_metrics.accuracy, 
@@ -186,6 +188,8 @@ def build_train_function(train_on_batch, eval_on_batch, adversary):
             (variables, rng_adversary), 
             batched_training_set
         )
+        # print(batched_training_set.images.shape)
+        # print(batched_adv_training_set.images.shape)
         state = state._replace(rng=rng)
         images = jnp.concatenate(
             [batched_training_set.images.reshape((-1, batched_training_set.images.shape[-3], batched_training_set.images.shape[-2], batched_training_set.images.shape[-1])), 
