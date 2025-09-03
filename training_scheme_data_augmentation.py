@@ -195,7 +195,9 @@ def build_train_function(train_on_batch, eval_on_batch, adversary):
             [batched_training_set.images.reshape((-1, batched_training_set.images.shape[-3], batched_training_set.images.shape[-2], batched_training_set.images.shape[-1])), 
              batched_adv_training_set.images.reshape((-1, batched_adv_training_set.images.shape[-3], batched_adv_training_set.images.shape[-2], batched_adv_training_set.images.shape[-1]))], axis=0)
         labels = jnp.concatenate([batched_training_set.labels.reshape((-1,)), batched_adv_training_set.labels.reshape((-1,))], axis=0)
-        batched_training_set = data_handling.shuffle_and_batch_tree(rng_batch, data_handling.DataBatch(images=images, labels=labels), args.batch_size)
+        training_set = data_handling.DataBatch(images=images, labels=labels)
+        training_set = data_handling.DataBatch(images=training_set.images.reshape((-1, training_set.images.shape[-3], training_set.images.shape[-2], training_set.images.shape[-1])), labels=training_set.labels)
+        batched_training_set = data_handling.shuffle_and_batch_tree(rng_batch, training_set, args.batch_size)
         #rng, rng_shuffle = jax.random.split(state.rng)
         #batched_training_set = data_handling.shuffle_and_batch_tree(rng_shuffle, augmented_train_set, args.batch_size)
         state, train_metrics = jax.lax.scan(
