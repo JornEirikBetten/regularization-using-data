@@ -115,7 +115,7 @@ else:
     
 train_loss_fn, eval_loss_fn = training.build_loss_fn(model_fn, distance_metric=training.cross_entropy, regularizer=None, batch_norm=args.batch_norm, dropout=args.dropout)
 optimizer = optax.adam(learning_rate=args.lr)
-pgd_linf, pgd_l2 = adversaries.build_pgd_adversaries(eval_loss_fn, epsilon=0.031, alpha=0.0078, num_steps=40, batch_norm=args.batch_norm)
+pgd_linf, pgd_l2 = adversaries.build_pgd_adversaries(eval_loss_fn, epsilon=0.031, alpha=0.00078, num_steps=40, batch_norm=args.batch_norm)
 
 train_on_batch = training.build_train_step(train_loss_fn, optimizer, batch_norm=args.batch_norm, dropout=args.dropout)
 eval_on_batch = training.build_eval_batch(eval_loss_fn, batch_norm=args.batch_norm)
