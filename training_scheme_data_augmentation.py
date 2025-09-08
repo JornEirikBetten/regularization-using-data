@@ -66,7 +66,7 @@ if args.dropout:
     args.model = f"dropout{args.model}"
 
 wandb_project = f"data-augmentation" 
-wandb_name = f"adversarial-{args.dataset}-{args.model}-lr={args.lr}"
+wandb_name = f"adversarial-{args.dataset}-{args.model}-lr={args.lr}-batch_size={args.batch_size}"
 
 
 # LOAD DATASET        
