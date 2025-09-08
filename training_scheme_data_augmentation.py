@@ -36,6 +36,7 @@ class TrainingConfig(BaseModel):
     seed: int = 123456
     lr: float = 0.1
     batch_size: int = 512
+    eval_batch_size: int = 1024
     eval_interval: int = 10
     epochs: int = 101
     dropout: bool = False
@@ -71,13 +72,13 @@ wandb_name = f"adversarial-{args.dataset}-{args.model}-lr={args.lr}-batch_size={
 
 # LOAD DATASET        
 if args.dataset == "mnist": 
-    dataset = datasets.MNISTDataJAX(data_points_per_class=42*128)
+    dataset = datasets.MNISTDataJAX(data_points_per_class=1024*5)
     num_classes = 10
 elif args.dataset == "cifar10": 
-    dataset = datasets.CIFAR10DataJAX(data_points_per_class=42*128)
+    dataset = datasets.CIFAR10DataJAX(data_points_per_class=1024*5)
     num_classes = 10
 elif args.dataset == "cifar100": 
-    dataset = datasets.CIFAR100DataJAX(data_points_per_class=42*128)
+    dataset = datasets.CIFAR100DataJAX(data_points_per_class=1024*5)
     num_classes = 100
 
 
@@ -85,7 +86,7 @@ train_set = dataset.train_set
 validation_set = dataset.validation_set
 key = jax.random.PRNGKey(args.seed)
 key, shuffle_key = jax.random.split(key)
-batched_validation_set = data_handling.shuffle_and_batch_tree(shuffle_key, validation_set, args.batch_size)
+batched_validation_set = data_handling.shuffle_and_batch_tree(shuffle_key, validation_set, args.eval_batch_size)
 
 model = models.RESNET_CONSTRUCTOR[args.model]
 initial_conv_config = {"kernel_size": (3, 3), "strides": 1, "padding": "SAME"}
@@ -182,7 +183,7 @@ def build_train_function(train_on_batch, eval_on_batch, adversary):
         # rngs = jax.random.split(rng_transform, train_set.images.shape[0])
         # augmented_train_set = data_handling.DataBatch(images=batch_transform(rngs, train_set.images), labels=train_set.labels)
         rng, rng_batch, rng_adversary = jax.random.split(state.rng, 3)
-        batched_training_set = data_handling.shuffle_and_batch_tree(rng_batch, train_set, args.batch_size)
+        batched_training_set = data_handling.shuffle_and_batch_tree(rng_batch, train_set, args.eval_batch_size)
         (variables, rng), batched_adv_training_set = jax.lax.scan(
             adversary, 
             (variables, rng_adversary), 
