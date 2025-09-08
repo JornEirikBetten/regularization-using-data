@@ -3,7 +3,7 @@
 #SBATCH --account=jorneirik 
 #SBATCH --job-name=cifar10_adversarial_training
 #SBATCH --output=cifar10_adversarial_training.log   
-#SBATCH --partition=hgx2q
+#SBATCH --partition=dgx2q
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH -c 6          #  På g001 bør en berense seg til 96 / 16 cores per GPU
