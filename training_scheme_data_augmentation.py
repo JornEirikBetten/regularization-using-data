@@ -38,7 +38,7 @@ class TrainingConfig(BaseModel):
     batch_size: int = 512
     eval_batch_size: int = 1024
     eval_interval: int = 10
-    epochs: int = 101
+    total_updates: int = 101
     dropout: bool = False
     batch_norm: bool = False
     optimizer: Literal[
@@ -66,7 +66,7 @@ args = TrainingConfig(**OmegaConf.to_object(OmegaConf.from_cli()))
 if args.dropout: 
     args.model = f"dropout{args.model}"
 
-wandb_project = f"data-augmentation" 
+wandb_project = f"constant-updates" 
 wandb_name = f"adversarial-{args.dataset}-{args.model}-lr={args.lr}-batch_size={args.batch_size}"
 
 
@@ -81,6 +81,9 @@ elif args.dataset == "cifar100":
     dataset = datasets.CIFAR100DataJAX(data_points_per_class=1024*5)
     num_classes = 100
 
+data_points_total = 1024*5*10 
+updates_per_epoch = data_points_total // args.batch_size
+epochs = args.total_updates // updates_per_epoch
 
 train_set = dataset.train_set 
 validation_set = dataset.validation_set
@@ -241,7 +244,7 @@ def build_train_function(train_on_batch, eval_on_batch, adversary):
             train_epoch, 
             carry, 
             None, 
-            length=args.epochs
+            length=epochs
         )
         return trained_state, mean_eval_accuracies
     

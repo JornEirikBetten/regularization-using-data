@@ -10,9 +10,9 @@
 #SBATCH --gres=gpu:1
 
 
-srun -n 1 python training_scheme_data_augmentation.py dataset=cifar10 model=resnet18 batch_norm=True lr=0.02 eval_interval=10 dropout=True batch_size=512
-srun -n 1 python training_scheme_data_augmentation.py dataset=cifar10 model=resnet18 batch_norm=True lr=0.02 eval_interval=10 dropout=True batch_size=256
-srun -n 1 python training_scheme_data_augmentation.py dataset=cifar10 model=resnet18 batch_norm=True lr=0.02 eval_interval=10 dropout=True batch_size=128
-srun -n 1 python training_scheme_data_augmentation.py dataset=cifar10 model=resnet18 batch_norm=True lr=0.02 eval_interval=10 dropout=True batch_size=64
-srun -n 1 python training_scheme_data_augmentation.py dataset=cifar10 model=resnet18 batch_norm=True lr=0.02 eval_interval=10 dropout=True batch_size=32
-srun -n 1 python training_scheme_data_augmentation.py dataset=cifar10 model=resnet18 batch_norm=True lr=0.02 eval_interval=10 dropout=True batch_size=16
+srun -n 1 python training_scheme_data_augmentation.py dataset=cifar10 model=resnet18 batch_norm=True lr=0.02 eval_interval=10 dropout=True batch_size=512 total_updates=50000
+srun -n 1 python training_scheme_data_augmentation.py dataset=cifar10 model=resnet18 batch_norm=True lr=0.02 eval_interval=10 dropout=True batch_size=256 total_updates=50000
+srun -n 1 python training_scheme_data_augmentation.py dataset=cifar10 model=resnet18 batch_norm=True lr=0.02 eval_interval=10 dropout=True batch_size=128 total_updates=50000
+srun -n 1 python training_scheme_data_augmentation.py dataset=cifar10 model=resnet18 batch_norm=True lr=0.02 eval_interval=10 dropout=True batch_size=64 total_updates=50000
+# srun -n 1 python training_scheme_data_augmentation.py dataset=cifar10 model=resnet18 batch_norm=True lr=0.02 eval_interval=10 dropout=True batch_size=32
+# srun -n 1 python training_scheme_data_augmentation.py dataset=cifar10 model=resnet18 batch_norm=True lr=0.02 eval_interval=10 dropout=True batch_size=16
